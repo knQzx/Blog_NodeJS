@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Блог</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/blog">Блог</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/add_new">Добавить статью</a>
+          </li>
+        </ul>
+      </div>
+      <% if (what == 'Войти') { %>
+        <a href="/login" class="btn btn-success" role="button" aria-disabled="true">Войти</a>
+      <% } else if (what == 'Выйти') { %>
+        <a href="/logout" class="btn btn-warning" role="button" aria-disabled="true">Выйти - <%= login_value %></a>
+      <% } %>
+    </nav>
+
+    <br><br><br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="/blog" class="badge badge-danger">Назад</a><br>
+          <h1><strong>Зарегистрироваться</strong></h1><br>
+          <form action="/registration" method="POST">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Логин" name="login_value">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Пароль" name="password_value">
+            </div>
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            <br><br>
+
+            <br><br>
+            <a href="/login" class="badge badge-secondary">Вход</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+</body>
+</html>
